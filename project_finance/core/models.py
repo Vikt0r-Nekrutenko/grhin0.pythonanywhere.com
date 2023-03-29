@@ -14,6 +14,9 @@ class Deposit(models.Model):
     name = models.CharField(max_length=255, primary_key=True)
     balance = models.IntegerField()
 
+    def __str__(self):
+        return f'{self.name}: {self.balance}'
+
 
 class Operation(models.Model):
     date = models.DateField()
