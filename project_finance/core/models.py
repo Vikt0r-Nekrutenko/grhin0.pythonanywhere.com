@@ -13,3 +13,10 @@ class Category(models.Model):
 class Deposit(models.Model):
     name = models.CharField(primary_key=True)
     balance = models.IntegerField()
+
+
+class Operation(models.Model):
+    date = models.DateField()
+    deposit = models.ForeignKey('Deposit', on_delete=models.PROTECT, null=False)
+    amount = models.IntegerField()
+    category = models.ForeignKey('Category', on_delete=models.PROTECT, null=False)
