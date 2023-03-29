@@ -9,6 +9,9 @@ class Category(models.Model):
     name = models.CharField(max_length=255, primary_key=True)
     type = models.ForeignKey('CategoryType', on_delete=models.PROTECT, null=False)
 
+    def __str__(self):
+        return f'{self.name}: {self.type}'
+
 
 class Deposit(models.Model):
     name = models.CharField(max_length=255, primary_key=True)
