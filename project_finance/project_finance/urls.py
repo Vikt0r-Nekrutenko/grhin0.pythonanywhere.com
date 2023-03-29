@@ -20,5 +20,5 @@ from core.views import DepositAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/deposits', DepositAPIView)
+    path('api/deposits/', DepositAPIView.as_view()),
 ]
