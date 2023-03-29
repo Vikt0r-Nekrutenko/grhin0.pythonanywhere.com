@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from rest_framework import generics
-from .models import Deposit
-from .serializers import DepositSerializer
+from .models import Operation
+from .serializers import OperationSerializer
 
 
-class DepositAPIView(generics.ListAPIView):
-    queryset = Deposit.objects.all()
-    serializer_class = DepositSerializer
+class OperationAPIView(generics.ListAPIView):
+    queryset = Operation.objects.all()
+    serializer_class = OperationSerializer

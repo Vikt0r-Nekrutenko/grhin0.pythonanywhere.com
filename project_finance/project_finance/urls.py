@@ -15,10 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
-from core.views import DepositAPIView
+from core.views import OperationAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/deposits/', DepositAPIView.as_view()),
+    path('api/deposits/', OperationAPIView.as_view()),
 ]

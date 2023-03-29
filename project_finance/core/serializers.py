@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from .models import Deposit
+from .models import Operation
 
 
-class DepositSerializer(serializers.ModelSerializer):
+class OperationSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Deposit
-        fields = "__all__"
+        model = Operation
+        fields = ('date', 'deposit', 'amount', 'category')
