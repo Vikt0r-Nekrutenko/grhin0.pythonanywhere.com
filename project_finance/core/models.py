@@ -1,3 +1,5 @@
 from django.db import models
 
-# Create your models here.
+
+class CategoryType(models.Model):
+    type = models.CharField(primary_key=True, null=False)
