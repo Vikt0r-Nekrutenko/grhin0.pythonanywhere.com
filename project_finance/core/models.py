@@ -8,3 +8,8 @@ class CategoryType(models.Model):
 class Category(models.Model):
     name = models.CharField(primary_key=True)
     type = models.ForeignKey('CategoryType', on_delete=models.PROTECT, null=False)
+
+
+class Deposit(models.Model):
+    name = models.CharField(primary_key=True)
+    balance = models.IntegerField()
