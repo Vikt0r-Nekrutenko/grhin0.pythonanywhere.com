@@ -26,3 +26,6 @@ class Operation(models.Model):
     deposit = models.ForeignKey('Deposit', on_delete=models.PROTECT, null=False)
     amount = models.IntegerField()
     category = models.ForeignKey('Category', on_delete=models.PROTECT, null=False)
+
+    def __str__(self):
+        return f'{self.date} {self.deposit} {self.amount} {self.category}'
