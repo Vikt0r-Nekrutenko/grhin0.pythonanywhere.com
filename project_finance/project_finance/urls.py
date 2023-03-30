@@ -20,8 +20,10 @@ from rest_framework import routers
 from core.views import *
 
 router = routers.SimpleRouter()
+router.register(r'deposits', DepositAPIViewSet)
 router.register(r'operations', OperationAPIViewSet)
 router.register(r'categories', CategoryAPIViewSet)
+router.register(r'types', CategoryTypeAPIViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
