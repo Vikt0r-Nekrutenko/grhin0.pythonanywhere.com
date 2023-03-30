@@ -26,4 +26,4 @@ class CategoryAPIViewSet(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['type']
+    filterset_fields = ['name', 'type']
