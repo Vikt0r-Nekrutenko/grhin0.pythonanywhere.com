@@ -19,7 +19,7 @@ class OperationAPIViewSet(viewsets.ModelViewSet):
     queryset = Operation.objects.all()
     serializer_class = OperationSerializer
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['amount']
+    filterset_fields = ['date', 'deposit', 'amount', 'category']
 
 
 class CategoryAPIViewSet(viewsets.ModelViewSet):
