@@ -28,6 +28,7 @@ class CategoryAPIViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['name', 'type']
 
+
 class DebtAPIViewSet(viewsets.ModelViewSet):
     queryset = Debt.objects.all()
-    serializer_class = DebtSeriallizer
+    serializer_class = DebtSerializer
