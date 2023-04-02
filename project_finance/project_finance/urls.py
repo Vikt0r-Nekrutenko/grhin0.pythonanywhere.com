@@ -24,6 +24,7 @@ router.register(r'deposits', DepositAPIViewSet)
 router.register(r'operations', OperationAPIViewSet)
 router.register(r'categories', CategoryAPIViewSet)
 router.register(r'types', CategoryTypeAPIViewSet)
+router.register(r'debts', DebtAPIViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
