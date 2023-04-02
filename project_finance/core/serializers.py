@@ -17,7 +17,7 @@ class CategoryTypeSerializer(serializers.ModelSerializer):
 class OperationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Operation
-        fields = ('date', 'deposit', 'amount', 'category')
+        fields = ('id', 'date', 'deposit', 'amount', 'category')
 
 
 class CategorySerializer(serializers.ModelSerializer):
