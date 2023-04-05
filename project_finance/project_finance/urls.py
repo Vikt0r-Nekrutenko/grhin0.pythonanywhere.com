@@ -30,6 +30,7 @@ router.register(r'types', CategoryTypeAPIViewSet)
 router.register(r'debts', DebtAPIViewSet)
 
 urlpatterns = [
+    path('', dashboard, name='dashboard'),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls))
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

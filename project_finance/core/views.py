@@ -1,8 +1,12 @@
-from django.shortcuts import render
+from django.http import HttpResponse
 from rest_framework import generics, viewsets
 from .models import *
 from .serializers import *
 from django_filters.rest_framework import DjangoFilterBackend
+
+
+def dashboard(request):
+    return HttpResponse("hello")
 
 
 class DepositAPIViewSet(viewsets.ModelViewSet):
