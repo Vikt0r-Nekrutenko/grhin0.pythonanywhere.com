@@ -1,16 +1,9 @@
 {
-  "rewrites":
-  [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
   "builds":
   [
     {
       "src": "project_finance/wsgi.py",
-      "use": "@vercel/python",
+      "use": "@ardnt/vercel-python-wsgi",
       "config": {
         "maxLambdaSize": "15mb",
         "runtime": "python3.9"
