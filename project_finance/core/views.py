@@ -5,10 +5,6 @@ from .serializers import *
 from django_filters.rest_framework import DjangoFilterBackend
 
 
-def dashboard(request):
-    return HttpResponse("hello")
-
-
 class DepositAPIViewSet(viewsets.ModelViewSet):
     queryset = Deposit.objects.all()
     serializer_class = DepositSerializer
