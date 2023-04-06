@@ -31,7 +31,6 @@ ALLOWED_HOSTS = [
     '.pythonanywhere.com',
 ]
 
-
 # Application definition
 
 REST_FRAMEWORK = {
@@ -154,9 +153,5 @@ MEDIA_ROOT = Path(BASE_DIR / 'media')
 SECURE_SSL_REDIRECT = True
 
 CSRF_COOKIE_SECURE = True
-
-CSRF_TRUSTED_ORIGINS=[
-    'http://grhin0.pythonanywhere.com',
-]
 
 SESSION_COOKIE_SECURE = True
