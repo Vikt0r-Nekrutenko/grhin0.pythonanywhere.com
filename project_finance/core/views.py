@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.shortcuts import render
 from rest_framework import viewsets
 from .models import *
@@ -35,4 +37,15 @@ class DebtAPIViewSet(viewsets.ModelViewSet):
 
 
 def main_page_view(request):
-    return render(request, 'index.html')
+    objects_count = Category.objects.count()
+    operations_count = Operation.objects.count()
+
+    str_date =str(Operation.objects.first().date)
+    date = datetime.strptime(str_date, '%Y-%m-%d').date()
+    month_count = int((datetime.now().date() - date).days)
+
+    return render(request, 'index.html', {
+                                            'objects_count': objects_count,
+                                            'operations_count': operations_count,
+                                            'month_count': month_count,
+                                        })
