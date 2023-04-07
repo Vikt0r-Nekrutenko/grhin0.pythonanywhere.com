@@ -77,7 +77,9 @@ ROOT_URLCONF = 'project_finance.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'templates'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -150,7 +152,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = Path(BASE_DIR / 'media')
 
-SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = False
 
 CSRF_COOKIE_SECURE = True
 
