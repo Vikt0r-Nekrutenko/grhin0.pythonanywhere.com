@@ -19,6 +19,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 
+import core
 from core.views import *
 
 
@@ -31,5 +32,6 @@ router.register(r'debts', DebtAPIViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls))
+    path('api/', include(router.urls)),
+    path('', main_page_view, name='main_page_view')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
