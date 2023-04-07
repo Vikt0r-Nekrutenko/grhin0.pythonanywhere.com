@@ -1,3 +1,4 @@
+from django.shortcuts import render
 from rest_framework import viewsets
 from .models import *
 from .serializers import *
@@ -31,3 +32,7 @@ class CategoryAPIViewSet(viewsets.ModelViewSet):
 class DebtAPIViewSet(viewsets.ModelViewSet):
     queryset = Debt.objects.all()
     serializer_class = DebtSerializer
+
+
+def main_page_view(request):
+    return render(request, 'index.html')
