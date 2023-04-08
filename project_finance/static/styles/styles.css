@@ -46,6 +46,10 @@ h3 {
     padding: 3% 30%;
 }
 
+.wrapper {
+    margin: 0 10%;
+}
+
 .cell {
     float: left;
     color: #DDD;
