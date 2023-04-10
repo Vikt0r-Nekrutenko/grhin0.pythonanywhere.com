@@ -24,7 +24,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(os.environ.get('DJANGO_DEBUG'))
+dbg = os.environ.get('DJANGO_DEBUG')
+if dbg == 'True':
+    DEBUG = True
+else:
+    DEBUG = False
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
@@ -158,7 +162,11 @@ MEDIA_ROOT = Path(BASE_DIR / 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-SECURE_SSL_REDIRECT = bool(os.environ.get('DJANGO_SSL_REDIRECT'))
+ssl = os.environ.get('DJANGO_SSL_REDIRECT')
+if ssl == 'True':
+    SECURE_SSL_REDIRECT = True
+else:
+    SECURE_SSL_REDIRECT = False
 
 CSRF_COOKIE_SECURE = True
 

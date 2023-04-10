@@ -37,9 +37,8 @@ class Operation(models.Model):
 
 class Debt(models.Model):
     id = models.IntegerField(primary_key=True, auto_created=True)
-    deposit = models.ForeignKey('Deposit', on_delete=models.CASCADE, null=False)
     name = models.CharField(max_length=255)
     amount = models.IntegerField()
 
     def __str__(self):
-        return f'{self.id} {self.deposit} {self.name} {self.amount}'
+        return f'{self.id} {self.name} {self.amount}'
