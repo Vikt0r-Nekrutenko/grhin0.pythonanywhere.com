@@ -59,7 +59,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core.apps.CoreConfig',
+    'project_finance.apps.CoreConfig',
     'rest_framework',
     'rest_framework.authtoken',
     'django_filters',

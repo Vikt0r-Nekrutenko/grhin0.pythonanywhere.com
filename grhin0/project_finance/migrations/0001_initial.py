@@ -37,8 +37,8 @@ class Migration(migrations.Migration):
                 ('id', models.IntegerField(auto_created=True, primary_key=True, serialize=False)),
                 ('date', models.DateField()),
                 ('amount', models.IntegerField()),
-                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='operations', to='core.category')),
-                ('deposit', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='core.deposit')),
+                ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='operations', to='project_finance.category')),
+                ('deposit', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='project_finance.deposit')),
             ],
         ),
         migrations.CreateModel(
@@ -47,12 +47,12 @@ class Migration(migrations.Migration):
                 ('id', models.IntegerField(auto_created=True, primary_key=True, serialize=False)),
                 ('name', models.CharField(max_length=255)),
                 ('amount', models.IntegerField()),
-                ('deposit', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='core.deposit')),
+                ('deposit', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='project_finance.deposit')),
             ],
         ),
         migrations.AddField(
             model_name='category',
             name='type',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='core.categorytype'),
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='project_finance.categorytype'),
         ),
     ]
