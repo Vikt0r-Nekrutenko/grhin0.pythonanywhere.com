@@ -11,7 +11,7 @@ class DataAPIViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         user_version = self.request.query_params.get('version')
         if user_version is not None:
-            return Deposit.objects.filter(version__gt=user_version)
+            return self.serializer_class.Meta.model.objects.filter(version__gt=user_version)
         return super().get_queryset()
 
 
