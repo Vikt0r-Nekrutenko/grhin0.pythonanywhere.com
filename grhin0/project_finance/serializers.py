@@ -5,22 +5,22 @@ from .models import *
 class DepositSerializer(serializers.ModelSerializer):
     class Meta:
         model = Deposit
-        fields = ('name', 'balance', 'version', 'is_deleted')
+        fields = '__all__'
 
 
 class OperationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Operation
-        fields = ('id', 'date', 'deposit', 'amount', 'category')
+        fields = '__all__'
 
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ['name', 'type']
+        fields = '__all__'
 
 
 class DebtSerializer(serializers.ModelSerializer):
     class Meta:
         model = Debt
-        fields = ['id', 'name', 'amount']
+        fields = '__all__'
