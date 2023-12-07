@@ -15,11 +15,9 @@ class OperationSerializer(serializers.ModelSerializer):
 
 
 class CategorySerializer(serializers.ModelSerializer):
-    operations = OperationSerializer(many=True, read_only=True)
-
     class Meta:
         model = Category
-        fields = ['name', 'type', 'operations']
+        fields = ['name', 'type']
 
 
 class DebtSerializer(serializers.ModelSerializer):
