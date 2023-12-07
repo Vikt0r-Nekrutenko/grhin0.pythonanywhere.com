@@ -11,6 +11,12 @@ class DepositAPIViewSet(viewsets.ModelViewSet):
     queryset = Deposit.objects.all()
     serializer_class = DepositSerializer
 
+    def get_queryset(self):
+        user_version = self.request.query_params.get('version')
+        if user_version:
+            return Deposit.objects.filter(version__gt=user_version)
+        return super().get_queryset()
+
 
 class OperationAPIViewSet(viewsets.ModelViewSet):
     queryset = Operation.objects.all()
