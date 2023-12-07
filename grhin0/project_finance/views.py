@@ -12,11 +12,6 @@ class DepositAPIViewSet(viewsets.ModelViewSet):
     serializer_class = DepositSerializer
 
 
-class CategoryTypeAPIViewSet(viewsets.ModelViewSet):
-    queryset = CategoryType.objects.all()
-    serializer_class = CategoryTypeSerializer
-
-
 class OperationAPIViewSet(viewsets.ModelViewSet):
     queryset = Operation.objects.all()
     serializer_class = OperationSerializer
