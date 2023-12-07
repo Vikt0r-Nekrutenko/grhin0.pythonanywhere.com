@@ -14,7 +14,8 @@ class DepositAPIViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         user_version = self.request.query_params.get('version')
         if user_version:
-            return Deposit.objects.filter(version__gt=user_version)
+            return (Deposit.objects.filter(version__gt=user_version).
+                                    filter(is_deleted__exact=0))
         return super().get_queryset()
 
 

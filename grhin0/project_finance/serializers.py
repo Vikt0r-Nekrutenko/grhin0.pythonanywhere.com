@@ -5,7 +5,7 @@ from .models import *
 class DepositSerializer(serializers.ModelSerializer):
     class Meta:
         model = Deposit
-        fields = ('name', 'balance', 'version')
+        fields = ('name', 'balance', 'version', 'is_deleted')
 
 
 class OperationSerializer(serializers.ModelSerializer):
