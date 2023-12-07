@@ -62,7 +62,6 @@ INSTALLED_APPS = [
     'project_finance.apps.CoreConfig',
     'rest_framework',
     'rest_framework.authtoken',
-    'django_filters',
 ]
 
 MIDDLEWARE = [
