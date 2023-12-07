@@ -8,12 +8,6 @@ class DepositSerializer(serializers.ModelSerializer):
         fields = ('name', 'balance')
 
 
-class CategoryTypeSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = CategoryType
-        fields = ('type',)
-
-
 class OperationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Operation
