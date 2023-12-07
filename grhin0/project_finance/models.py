@@ -25,7 +25,6 @@ class Deposit(models.Model):
 
 
 class Operation(models.Model):
-    id = models.IntegerField(primary_key=True, auto_created=True)
     date = models.DateField()
     deposit = models.ForeignKey('Deposit', on_delete=models.CASCADE)
     amount = models.IntegerField()
@@ -36,7 +35,6 @@ class Operation(models.Model):
 
 
 class Debt(models.Model):
-    id = models.IntegerField(primary_key=True, auto_created=True)
     name = models.CharField(max_length=255)
     amount = models.IntegerField()
 
