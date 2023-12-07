@@ -21,10 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = '1234'#os.environ.get('DJANGO_SECRET_KEY')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-dbg = True#os.environ.get('DJANGO_DEBUG')
+dbg = os.environ.get('DJANGO_DEBUG')
 if dbg == 'True':
     DEBUG = True
 else:
@@ -39,8 +39,7 @@ ALLOWED_HOSTS = [
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        #'rest_framework.permissions.IsAuthenticated',
-        'rest_framework.permissions.AllowAny',
+        'rest_framework.permissions.IsAuthenticated',
     ],
 
     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -157,7 +156,7 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ssl = False#os.environ.get('DJANGO_SSL_REDIRECT')
+ssl = os.environ.get('DJANGO_SSL_REDIRECT')
 if ssl == 'True':
     SECURE_SSL_REDIRECT = True
 else:
