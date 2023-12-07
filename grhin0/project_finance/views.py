@@ -21,17 +21,17 @@ class DepositAPIViewSet(DataAPIViewSet):
     serializer_class = DepositSerializer
 
 
-class OperationAPIViewSet(viewsets.ModelViewSet):
+class OperationAPIViewSet(DataAPIViewSet):
     queryset = Operation.objects.all()
     serializer_class = OperationSerializer
 
 
-class CategoryAPIViewSet(viewsets.ModelViewSet):
+class CategoryAPIViewSet(DataAPIViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
 
 
-class DebtAPIViewSet(viewsets.ModelViewSet):
+class DebtAPIViewSet(DataAPIViewSet):
     queryset = Debt.objects.all()
     serializer_class = DebtSerializer
 
