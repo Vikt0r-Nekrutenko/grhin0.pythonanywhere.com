@@ -30,6 +30,7 @@ router.register(r'debts', DebtAPIViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
-    path('', main_page_view, name='main_page_view')
+    path('project_finance/', main_page_view, name='main_page_view'),
+    path('project_finance/api/', include(router.urls)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
