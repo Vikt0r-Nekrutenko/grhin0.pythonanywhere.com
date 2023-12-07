@@ -7,16 +7,18 @@ from .serializers import *
 from django_filters.rest_framework import DjangoFilterBackend
 
 
-class DepositAPIViewSet(viewsets.ModelViewSet):
-    queryset = Deposit.objects.all()
-    serializer_class = DepositSerializer
-
+class DataAPIViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         user_version = self.request.query_params.get('version')
         if user_version:
             return (Deposit.objects.filter(version__gt=user_version).
                                     filter(is_deleted__exact=0))
         return super().get_queryset()
+
+
+class DepositAPIViewSet(DataAPIViewSet):
+    queryset = Deposit.objects.all()
+    serializer_class = DepositSerializer
 
 
 class OperationAPIViewSet(viewsets.ModelViewSet):
