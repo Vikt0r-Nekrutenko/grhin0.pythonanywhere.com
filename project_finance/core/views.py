@@ -40,9 +40,12 @@ def main_page_view(request):
     objects_count = Category.objects.count()
     operations_count = Operation.objects.count()
 
-    str_date =str(Operation.objects.first().date)
-    date = datetime.strptime(str_date, '%Y-%m-%d').date()
-    month_count = int((datetime.now().date() - date).days)
+    try:
+        str_date =str(Operation.objects.first().date)
+        date = datetime.strptime(str_date, '%Y-%m-%d').date()
+        month_count = int((datetime.now().date() - date).days)
+    except:
+        month_count = 0
 
     return render(request, 'index.html', {
                                             'objects_count': objects_count,
