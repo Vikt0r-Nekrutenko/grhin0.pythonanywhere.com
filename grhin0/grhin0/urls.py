@@ -17,20 +17,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework import routers
-from project_finance.views import *
+from project_finance.views import main_page_view
+from project_finance.routers import api_router
 
-
-router = routers.SimpleRouter()
-router.register(r'deposits', DepositAPIViewSet)
-router.register(r'operations', OperationAPIViewSet)
-router.register(r'categories', CategoryAPIViewSet)
-router.register(r'types', CategoryTypeAPIViewSet)
-router.register(r'debts', DebtAPIViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('project_finance/', main_page_view, name='main_page_view'),
-    path('project_finance/api/', include(router.urls)),
+    path('project_finance/api/', include(api_router.urls)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
