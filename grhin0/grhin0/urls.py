@@ -19,9 +19,11 @@ from django.contrib import admin
 from django.urls import path, include
 from project_finance.views import main_page_view
 from project_finance.routers import api_router
+from django.views.generic.base import TemplateView
 
 
 urlpatterns = [
+    path('', TemplateView.as_view(template_name='project_finance_index.html')),
     path('admin/', admin.site.urls),
     path('project_finance/', main_page_view, name='main_page_view'),
     path('project_finance/api/', include(api_router.urls)),
