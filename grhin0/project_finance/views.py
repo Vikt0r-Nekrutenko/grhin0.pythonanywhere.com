@@ -46,7 +46,7 @@ def main_page_view(request):
     except:
         month_count = 0
 
-    return render(request, 'index.html', {
+    return render(request, 'project_finances_index.html', {
         'objects_count': objects_count,
         'operations_count': operations_count,
         'month_count': month_count,
