@@ -23,7 +23,7 @@ from django.views.generic.base import TemplateView
 
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='project_finance_index.html')),
+    path('', TemplateView.as_view(template_name='grhin0_index.html')),
     path('admin/', admin.site.urls),
     path('project_finance/', main_page_view, name='main_page_view'),
     path('project_finance/api/', include(api_router.urls)),
