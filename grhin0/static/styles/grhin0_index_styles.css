@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: black;
+    color: white;
+    font-family: "Courier New", monospace;
+    padding: 30px 30px;
+    color: #999;
+}
+.begin {
+    color: #1c1;
+}
+.line {
+    display: flex;
+    margin-bottom: 5px;
+}
+.tilda {
+    color: red;
+}
+.access {
+    color: cyan;
+    margin-right: 10px;
+}
+header {
+    border-bottom-style: dashed;
+    border-color: #999;
+    margin-bottom: 15px;
+}
+.command, a {
+    color: #44f;
+    text-decoration: none;
+}
+.sub1 {
+    margin-left: 30px;
+    margin-bottom: 5px;
+}
+.sub2 {
+    margin-left: 60px;
+    margin-bottom: 5px;
+}
+td {
+    vertical-align: top;
+}
