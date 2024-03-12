@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Project Finance</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'styles.css' %}"/>
+        <link rel="shortcut icon" href="{% static 'pf.png' %}"/>
+    </head>
+    <header>
+        <img src="{% static 'pf.png' %}" class="logo">
+        <span>
+            <a href="https://t.me/grhin0">
+                <img src="{% static 'telg.png' %}" class="icon">
+            </a>
+            <a href="https://github.com/Vikt0r-Nekrutenko/">
+                <img src="{% static 'git.png' %}" class="icon">
+                </a>
+            <a href="https://www.linkedin.com/in/vikt0r-nekrutenko-18a033177">
+                <img src="{% static 'in.png' %}" class="icon">
+            </a>
+        </span>
+    </header>
+    <body>
+        <h1>Project Finance</h1>
+        <h2>Time for real tracking</h2>
+        <h3>
+            Project finance is the platform for tracking finances operations, collect statistic and return all of this
+            using REST API.
+        </h3>
+        <div class="wrapper">
+            <div class="cell left">
+                <div class="value">{{ objects_count }}</div>
+                <div class="title">Categories</div>
+            </div>
+            <div class="cell center">
+                <div class="value">{{ operations_count }}</div>
+                <div class="title">Operations</div>
+            </div>
+            <div class="cell right">
+                <div class="value">{{ month_count }}</div>
+                <div class="title">Days of trucking</div>
+            </div>
+        </div>
+        <div class="devkits">
+            <img src="{% static 'djrestpng.bmp' %}" class="djrest"/>
+            <img src="{% static 'dj.png' %}" class="dj"/>
+            <img src="{% static 'py.png' %}" class="py"/>
+        </div>
+        <span>copyright @2023 | designed with by grhin0</span>
+    </body>
+</html>
